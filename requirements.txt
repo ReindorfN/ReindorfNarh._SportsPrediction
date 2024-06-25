@@ -2,5 +2,5 @@ Numpy
 Pandas
 scikit-learn == 1.5
 streamlit
-joblib
+joblib == 1.4.2
 scipy
