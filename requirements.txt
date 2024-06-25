@@ -3,3 +3,4 @@ Pandas
 scikit-learn
 streamlit
 joblib
+scipy
