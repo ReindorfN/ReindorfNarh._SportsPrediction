@@ -105,7 +105,7 @@ def main():
             stl.error(f"Prediction error: {str(e)}")
 
     if stl.button("Developer Comments"):
-        stl.text("It was an interesting learning with this project")
+        stl.text("It was an interesting journey learning with this project")
         stl.text("Built with Streamlit")
 
 if __name__=='__main__':
