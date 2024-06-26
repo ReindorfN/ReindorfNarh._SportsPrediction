@@ -10,7 +10,7 @@ def welcome():
 
 
 # Error handling when loading model
-file_path = "voting_model_predictor.joblib"
+file_path = "best_model_predictor.joblib"
 try:
     best_model = joblib.load(file_path)
     stl.success("Model loaded successfully!")
