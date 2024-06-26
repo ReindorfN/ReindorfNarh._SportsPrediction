@@ -10,7 +10,7 @@ def welcome():
 
 
 # Error handling when loading model
-file_path = "voting_model_predictor.joblib"
+file_path = "best_model_predictor.joblib"
 try:
     best_model = joblib.load(file_path)
     stl.success("Model loaded successfully!")
@@ -19,19 +19,19 @@ except Exception as e:
     stl.stop()
 
 # Important features used to train the best model.
-features = ['skill_long_passing',
+features = ['power_long_shots',
+            'potential',
+            'attacking_short_passing',
             'attacking_crossing',
-            'power_long_shots',
+            'skill_ball_control',
+            'skill_curve',
             'age',
+            'skill_long_passing',
+            'movement_reactions',
+            'mentality_aggression',
+            'mentality_vision',
             'mentality_composure',
             'power_shot_power',
-            'skill_curve',
-            'mentality_vision',
-            'movement_reactions',
-            'potential',
-            'mentality_aggression',
-            'skill_ball_control',
-            'attacking_short_passing'
             ]
 
 # Function for processing the input data
@@ -82,19 +82,19 @@ def main():
     # prediction button
     if stl.button('Predict Player Rating'):
         inputs = {
-            'skill_long_passing' : skill_long_passing,
-            'attacking_crossing': attacking_crossing,
             'power_long_shots' : power_long_shots,
-            'age' : age,
-            'mentality_composure' : mentality_composure,
-            'power_shot_power' : power_shot_power,
-            'skill_curve' : skill_curve,
-            'mentality_vision' : mentality_vision,
-            'movement_reactions' : movement_reactions,
             'potential' : potential,
-            'mentality_aggression' : mentality_aggression,
+            'attacking_short_passing' : attacking_short_passing,
+            'attacking_crossing': attacking_crossing,
             'skill_ball_control' : skill_ball_control,
-            'attacking_short_passing' : attacking_short_passing,  
+            'skill_curve' : skill_curve,
+            'age' : age,
+            'skill_long_passing' : skill_long_passing,
+            'movement_reactions' : movement_reactions,
+            'mentality_aggression' : mentality_aggression,
+            'mentality_vision' : mentality_vision,
+            'mentality_composure' : mentality_composure,
+            'power_shot_power' : power_shot_power, 
         }
 
         # prediction
@@ -104,8 +104,8 @@ def main():
         except ValueError as e:
             stl.error(f"Prediction error: {str(e)}")
 
-    if stl.button("About"):
-        stl.text("Lets LEarn")
+    if stl.button("Developer Comments"):
+        stl.text("It was an interesting learning with this project")
         stl.text("Built with Streamlit")
 
 if __name__=='__main__':
