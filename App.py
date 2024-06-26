@@ -52,7 +52,7 @@ def prediction(input):
 
 def main():
     welcome()
-    stl.title("FIFA Player Rating Predictor")
+    #stl.title("FIFA Player Rating Predictor")
     html_temp = """
     <div style="background-color:tomato;padding:10px">
     <h2 style="color:white;text-align:center;">Streamlit FIFA Player Rating Predictor ML App </h2>
